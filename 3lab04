@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    float a, b, c, D, x1, x2;
+
+    printf("Input a: ");
+    scanf( "%f", &a);
+    printf("Input b: ");
+    scanf( "%f", &b);
+    printf("Input c: ");
+    scanf( "%f", &c);
+
+    if (a != 0) {
+        D = b*b - 4*a*c;
+        printf("Your discriminant: %f\n", D);
+
+        if (D < 0)
+        printf("Your equation has no roots.");
+
+        else if (D == 0) {
+        printf ("Your equation has two roots, both of them are equal.\n");
+        x1 = -b / (2 * a);
+        printf("Correct Root: %f", x1);
+        }
+
+        else if (D > 0) {
+        printf ("Your equation has two different roots.\n");
+        printf ("Correct Roots:\n");
+        x1 = (-b + sqrt(D)) / (2 * a);
+        x2 = (-b - sqrt(D)) / (2 * a);
+        printf("x1 = %f and x2 = %f", x1, x2);
+        }
+    } else {
+        printf ("Type a that is not equal 0\n");
+    }
+
+
+
+    return 0;
+}
